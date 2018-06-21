@@ -15,7 +15,7 @@ class Roster extends Component {
       <div>
         {this.props.innerText}
         <ul>
-          {this.props.players.map((player, index) => <li id={'player' + (index + 1)}>{player}<button onClick={this.props.handleDelete} playername={player}>Delete</button></li>)}
+          {this.props.players.map((player, index) => <li key={index} id={'player' + (index + 1)}>{player}<button onClick={this.props.handleDelete} playername={player}>Delete</button></li>)}
         </ul>
       </div>
     )

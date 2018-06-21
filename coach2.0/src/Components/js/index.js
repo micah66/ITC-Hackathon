@@ -18,6 +18,7 @@ class Box extends Component {
       <div className={'box'} id={this.props.id}>
           <h3 className='title'>{this.props.title}</h3>
           {this.props.innerText}
+          <h3 className='title'>{this.props.team_score}</h3>
       </div>
     )
   }
@@ -30,21 +31,36 @@ class Main extends Component {
                     </ul>
 
     const sections =  <div id='sections'>
-                        <section className='field-section' id='forwards'></section>
-                        <section className='field-section' id='midfielders'></section>
-                        <section className='field-section' id='defense'></section>
-                        <section className='field-section' id='goalkeeper'>
-                          <div className='player'>
+                        <section className='field-section' id='forwards'>
+                          {this.props.attacker.map((player, index) => <div key={index} className='player'>
                             <div className='dot goalkeeper'></div>
-                            <div>{this.props.players[0]}</div>
-                          </div>
+                            <div>{player}</div>
+                          </div>)}
+                        </section>
+                        <section className='field-section' id='midfielders'>
+                          {this.props.midfield.map((player, index) => <div key={index} className='player'>
+                          <div className='dot goalkeeper'></div>
+                          <div>{player}</div>
+                          </div>)}
+                        </section>
+                        <section className='field-section' id='defense'>
+                          {this.props.defender.map((player, index) => <div key={index} className='player'>
+                          <div className='dot goalkeeper'></div>
+                          <div>{player}</div>
+                          </div>)}
+                        </section>
+                        <section className='field-section' id='goalkeeper'>
+                          {this.props.goal.map((player, index) => <div key={index} className='player'>
+                            <div className='dot goalkeeper'></div>
+                            <div>{player}</div>
+                          </div>)}
                         </section>
                       </div>
     return (
       <div id='wrapper'>
         <div className='left'>
           <Box id='opponentDiv' title='GERMAN WC 2018' />
-          <Box id='formationDiv' title='FORMATION:' innerText={this.props.tactic} />
+          <Box id='formationDiv' title='FORMATION:' innerText={this.props.tactic} team_score={'TEAM SCORE: ' + this.props.team_score}/>
           <Box id='fieldDiv' innerText={sections}/>
         </div>
         <div className='right'>

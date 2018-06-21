@@ -52,7 +52,18 @@ class App extends Component {
      }
    }
     this.state = {
-      players: this.germany['4-4-2']['goal'].concat(this.germany['4-4-2']['defender']).concat(this.germany['4-4-2']['midfield']).concat(this.germany['4-4-2']['attacker']),
+      players: ['Manuel Neuer', 'Marc-Andre ter Stegen', 'Kevin Trapp',
+                 'Jerome Boateng', 'Matthias Ginter', 'Jonas Hector',
+                 'Mats Hummels', 'Joshua Kimmich', 'Marvin Plattenhardt',
+                 'Antonio Ruediger', 'Niklas Suele', 'Julian Brandt',
+                 'Julian Draxler', 'Leon Goretzka', 'Ilkay Guendogan',
+                 'Sami Khedira', 'Toni Kroos', 'Mesut Oezil', 'Sebastian Rudy',
+                 'Mario Gomez', 'Thomas Mueller', 'Marco Reus', 'Timo Werner'],
+      goal: this.germany['4-4-2']['goal'],
+      defender: this.germany['4-4-2']['defender'],
+      midfield: this.germany['4-4-2']['midfield'],
+      attacker: this.germany['4-4-2']['attacker'],
+      team_score: this.germany['4-4-2']['Team Score'].toFixed(2),
       page: 0
     }
   }
@@ -76,8 +87,11 @@ class App extends Component {
 
   getTactic(e) {
     this.setState({
-      players: this.germany[e.target.value]['goal'].concat(this.germany[e.target.value]['defender']).concat(this.germany[e.target.value]['midfield']).concat(this.germany[e.target.value]['attacker']),
-
+      goal: this.germany[e.target.value]['goal'],
+      defender: this.germany[e.target.value]['defender'],
+      midfield: this.germany[e.target.value]['midfield'],
+      attacker: this.germany[e.target.value]['attacker'],
+      team_score: this.germany[e.target.value]['Team Score'].toFixed(2),
     })
   }
 
@@ -121,7 +135,7 @@ class App extends Component {
             <li className="nav-items"><button onClick={this.statisticsPage.bind(this)}>Statistics</button></li>
           </ul>
         </nav>
-        {this.state.page === 0 ? <Main tactic={tactic} players={this.state.players} /> : null }
+        {this.state.page === 0 ? <Main tactic={tactic} team_score={this.state.team_score} players={this.state.players} goal={this.state.goal} defender={this.state.defender} midfield={this.state.midfield} attacker={this.state.attacker} /> : null }
         {this.state.page === 1 ? <Roster innerText={addPlayer} handleDelete={this.deletePlayer.bind(this)} players={this.state.players} /> : null }
         {this.state.page === 2 ? <Statistics players={this.state.players} /> : null }
       </div>
