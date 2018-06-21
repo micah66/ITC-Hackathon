@@ -7,7 +7,7 @@ from collections import Counter
 
 FILENAME = r"C:\Users\leohe\PycharmProjects\ITC\Hackathon\database.sqlite"
 
-ARGENTINA = ['Sergio Romero','Franco Armani','Wilfredo Caballero',
+ARGENTINA = ['Sergio Romero', 'Franco Armani', 'Wilfredo Caballero',
              'Cristian Daniel Ansaldi', 'Marcos Rojo', 'Marcos Acuna',
              'Nicolas Tagliafico', 'Gabriel Mercado', 'Nicolas Otamendi',
              'Javier Mascherano', 'Federico Fazio', 'Ever Banega',
@@ -24,13 +24,13 @@ GERMANY = ['Manuel Neuer', 'Marc-Andre ter Stegen', 'Kevin Trapp',
            'Sami Khedira', 'Toni Kroos', 'Mesut Oezil', 'Sebastian Rudy',
            'Mario Gomez', 'Thomas Mueller', 'Marco Reus', 'Timo Werner']
 
-FRANCE = ['Alphonse Areola','Hugo Lloris','Steve Mandanda', 'Adil Rami',
-          'Raphael Varane','Presnel Kimpembe', 'Benjamin Mendy',
-          'Benjamin Pavard','Lucas Hernandez','Samuel Umtiti',
-          'Corentin Tolisso','Nabil Fekir',"N'Golo Kanté",
-          'Blaise Matuidi', 'Paul Pogba','Djibril Sidibe','Thomas Lemar',
-          'Florian Thauvin', "Steven NZonzi",'Antoine Griezmann',
-          'Olivier Giroud','Ousmane Dembele', 'Kylian Mbappe Lottin']
+FRANCE = ['Alphonse Areola', 'Hugo Lloris', 'Steve Mandanda', 'Adil Rami',
+          'Raphael Varane', 'Presnel Kimpembe', 'Benjamin Mendy',
+          'Benjamin Pavard', 'Lucas Hernandez', 'Samuel Umtiti',
+          'Corentin Tolisso', 'Nabil Fekir', "N'Golo Kanté",
+          'Blaise Matuidi', 'Paul Pogba', 'Djibril Sidibe', 'Thomas Lemar',
+          'Florian Thauvin', "Steven NZonzi", 'Antoine Griezmann',
+          'Olivier Giroud', 'Ousmane Dembele', 'Kylian Mbappe Lottin']
 
 BARCELONA = ['Marc-Andre ter Stegen', 'Gerard Pique', 'Ivan Rakitic',
              'Sergio Busquets', 'Denis Suarez', 'Arda Turan', 'Andres Iniesta',
@@ -84,8 +84,8 @@ def performance_index(player_name, readiness):
                                   SELECT player_api_id 
                                   FROM player 
                                   WHERE player_name 
-                                  LIKE "{}");""".format(query_data,
-                                                        player_name)).fetchall()
+                                  LIKE "{}");""".
+                            format(query_data, player_name)).fetchall()
         player_att = list(p_att[0][1:])
         performance = readiness * (
                     np.array(float_metrics_list[p_pos]) @ np.array(
@@ -133,7 +133,7 @@ def get_roster(team_list, tactic, readiness_list):
 def main():
     tactic = '4-4-2'
     team_score, lineup, players_name, team = \
-        get_roster(ARGENTINA, tactic, np.ones(23))
+        get_roster(GERMANY, tactic, np.ones(23))
     print("Team Score:\t{}".format(team_score))
     for pos, name in zip(lineup, players_name):
         print("{}\t{}".format(pos, name))
