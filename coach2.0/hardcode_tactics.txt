@@ -1,0 +1,30 @@
+{'4-4-2':
+{'Team Score':810.5827234677516,
+'goal':['Manuel Neuer'],
+'defender':['Mats Hummels','Jerome Boateng','Matthias Ginter','Jonas Hector'],
+'midfield':['Mesut Oezil','Marco Reus','Toni Kroos','Thomas Mueller'],
+'attacker':['Mario Gomez','Timo Werner']},
+'5-3-2':
+{'Team Score':798.8886820932428,
+'goal':['Manuel Neuer'],
+'defender':['Mats Hummels','Jerome Boateng','Matthias Ginter','Jonas Hector','Marvin Plattenhardt'],
+'midfield':['Mesut Oezil','Marco Reus','Toni Kroos'],
+'attacker':['Mario Gomez','Timo Werner']},
+'3-5-2':
+{'Team Score':820.4556756649184,
+'goal':['Manuel Neuer'],
+'defender':['Mats Hummels','Jerome Boateng','Matthias Ginter'],
+'midfield':['Mesut Oezil','Marco Reus','Toni Kroos','Thomas Mueller','Ilkay Guendogan'],
+'attacker':['Mario Gomez','Timo Werner']},
+'4-5-1':
+{'Team Score':823.5926845576207,
+'goal':['Manuel Neuer'],
+'defender':['Mats Hummels','Jerome Boateng','Matthias Ginter','Jonas Hector'],
+'midfield':['Mesut Oezil','Marco Reus','Toni Kroos','Thomas Mueller','Ilkay Guendogan'],
+'attacker':['Mario Gomez']},
+'5-4-1':
+{'Team Score':812.6434458418819,
+'goal':['Manuel Neuer'],
+'defender':['Mats Hummels','Jerome Boateng','Matthias Ginter','Jonas Hector','Marvin Plattenhardt'],
+'midfield':['Mesut Oezil','Marco Reus','Toni Kroos','Thomas Mueller'],
+'attacker':['Mario Gomez']}}
