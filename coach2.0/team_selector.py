@@ -136,7 +136,7 @@ def main():
         get_roster(ARGENTINA, tactic, np.ones(23))
     print("Team Score:\t{}".format(team_score))
     for pos, name in zip(lineup, players_name):
-        print("{} \t{}".format(pos, name))
+        print("{}\t{}".format(pos, name))
 
 
 if __name__ == '__main__':
