@@ -3,16 +3,10 @@ body {
   box-sizing: border-box;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
 #nav {
   display: flex;
   justify-content: space-around;
   list-style: none;
-  max-width: 80%;
   margin: auto;
   background-color: black;
   color: white;

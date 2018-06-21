@@ -1,16 +1,39 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+}
+.App {
+  background-image: url('../images/background2.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
 #wrapper {
   display: flex;
   justify-content: space-around;
   align-content: center;
-  height: 100vh;
+  height: 90vh;
+  color: white;
 }
+
+.btn {
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
 .left, .right {
   display: flex;
   flex-direction: column;
 
 }
 .box {
-  border: solid 4px black;
+  border: solid 1px black;
   display: flex;
   width: 45vw;
 }
@@ -24,12 +47,14 @@
   height: 5%;
   margin: 5px;
   align-self: center;
+  border-radius: 10px;
 }
 
 #formationDiv {
   margin: 5px;
   height: 5%;
   align-self: center;
+  border-radius: 10px;
 }
 
 #fieldDiv {
@@ -40,9 +65,11 @@
   background-size: cover;
   background-position: center;
   background-color: #009e00;
+  border-radius: 10px;
 }
 
 #playersDiv {
+  border-radius: 10px;
   margin: 5px;
   height: 100%;
 }
@@ -64,7 +91,7 @@
 .field-section {
   height: 25%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -86,9 +113,54 @@
   align-items: center;
 }
 
+.player-name {
+  text-align: center;
+}
+
 .dot {
-  height: 25px;
-  width: 25px;
+  height: 50px;
+  width: 50px;
   border-radius: 50%;
-  background-color: red;
+  background-image: url(/static/media/german-football-team.1617e290.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: inset 0px 0px 10px 1px rgba(255,255,255,0.75);
+}
+
+#landingBackground {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/landingBackground.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+}
+#landingPage {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+#landingBtn {
+  margin-top: 85px;
+  height: 50px;
+  width: 200px;
+  border-radius: 50px;
+  font-size: 1.5em;
+  box-shadow: 20px 15px 40px 20px rgba(0,0,0,0.27);
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+
+}
+
+#landingBtn:hover {
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.2);
+  border: none;
+  color: white;
 }

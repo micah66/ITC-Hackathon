@@ -63,25 +63,25 @@ class App extends Component {
       defender: this.germany['4-4-2']['defender'],
       midfield: this.germany['4-4-2']['midfield'],
       attacker: this.germany['4-4-2']['attacker'],
-      team_score: this.germany['4-4-2']['Team Score'].toFixed(2),
+      team_score: (this.germany['4-4-2']['Team Score'] / 11).toFixed(2),
       page: 0
     }
   }
   lineupsPage() {
     this.setState({
-      page: 0
+      page: 1
     })
   }
 
   rosterPage() {
     this.setState({
-      page: 1
+      page: 2
     })
   }
 
   statisticsPage() {
     this.setState({
-      page: 2
+      page: 0
     })
   }
 
@@ -91,7 +91,7 @@ class App extends Component {
       defender: this.germany[e.target.value]['defender'],
       midfield: this.germany[e.target.value]['midfield'],
       attacker: this.germany[e.target.value]['attacker'],
-      team_score: this.germany[e.target.value]['Team Score'].toFixed(2),
+      team_score: (this.germany[e.target.value]['Team Score'] / 11).toFixed(2) ,
     })
   }
 
@@ -128,16 +128,16 @@ class App extends Component {
                         </div>
     return (
       <div className="App">
-        <nav>
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400" rel="stylesheet" />
+
+        {this.state.page !== 0 ? <nav>
           <ul id="nav">
-            <li className="nav-items"><button onClick={this.lineupsPage.bind(this)}>Lineups</button></li>
-            <li className="nav-items"><button onClick={this.rosterPage.bind(this)}>Roster</button></li>
-            <li className="nav-items"><button onClick={this.statisticsPage.bind(this)}>Statistics</button></li>
+            <li className="nav-items"><button className='btn' onClick={this.lineupsPage.bind(this)}>Available Players</button></li>
           </ul>
-        </nav>
-        {this.state.page === 0 ? <Main tactic={tactic} team_score={this.state.team_score} players={this.state.players} goal={this.state.goal} defender={this.state.defender} midfield={this.state.midfield} attacker={this.state.attacker} /> : null }
-        {this.state.page === 1 ? <Roster innerText={addPlayer} handleDelete={this.deletePlayer.bind(this)} players={this.state.players} /> : null }
-        {this.state.page === 2 ? <Statistics players={this.state.players} /> : null }
+        </nav> : null }
+        {this.state.page === 1 ? <Main tactic={tactic} team_score={this.state.team_score} players={this.state.players} goal={this.state.goal} defender={this.state.defender} midfield={this.state.midfield} attacker={this.state.attacker} /> : null }
+        {this.state.page === 2 ? <Roster innerText={addPlayer} handleDelete={this.deletePlayer.bind(this)} players={this.state.players} /> : null }
+        {this.state.page === 0 ? <Statistics handleWelcome={this.lineupsPage.bind(this)} players={this.state.players} /> : null }
       </div>
     );
   }

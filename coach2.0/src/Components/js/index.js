@@ -34,25 +34,25 @@ class Main extends Component {
                         <section className='field-section' id='forwards'>
                           {this.props.attacker.map((player, index) => <div key={index} className='player'>
                             <div className='dot goalkeeper'></div>
-                            <div>{player}</div>
+                            <div className='player-name'>{player}</div>
                           </div>)}
                         </section>
                         <section className='field-section' id='midfielders'>
                           {this.props.midfield.map((player, index) => <div key={index} className='player'>
-                          <div className='dot goalkeeper'></div>
-                          <div>{player}</div>
+                            <div className='dot goalkeeper'></div>
+                            <div className='player-name'>{player}</div>
                           </div>)}
                         </section>
                         <section className='field-section' id='defense'>
                           {this.props.defender.map((player, index) => <div key={index} className='player'>
-                          <div className='dot goalkeeper'></div>
-                          <div>{player}</div>
+                            <div className='dot goalkeeper'></div>
+                            <div className='player-name'>{player}</div>
                           </div>)}
                         </section>
                         <section className='field-section' id='goalkeeper'>
                           {this.props.goal.map((player, index) => <div key={index} className='player'>
                             <div className='dot goalkeeper'></div>
-                            <div>{player}</div>
+                            <div className='player-name'>{player}</div>
                           </div>)}
                         </section>
                       </div>
