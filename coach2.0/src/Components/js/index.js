@@ -17,7 +17,7 @@ class Box extends Component {
   }
   render () {
     return (
-      <div className={'box ' + this.props.classNames} id={this.props.id}>
+      <div className={'box'} id={this.props.id}>
           <h3 className='title'>{this.props.title}</h3>
           {this.props.innerText}
       </div>
@@ -46,8 +46,8 @@ class Main extends Component {
     return (
       <div id='wrapper'>
         <div className='left'>
-          <Box id='opponentDiv' classNames='' title='OPPONENT: ' innerText={<input type='text' />} />
-          <Box id='formationDiv' classNames='' title='FORMATION:' innerText={tactic} />
+          <Box id='opponentDiv' title='OPPONENT: ' innerText={<input type='text' />} />
+          <Box id='formationDiv' title='FORMATION:' innerText={tactic} />
           <Box id='fieldDiv' />
         </div>
         <div className='right'>
