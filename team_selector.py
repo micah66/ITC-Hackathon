@@ -53,16 +53,16 @@ def performance_index(player_name, readiness):
                 'defender_middle': 8,
                 'defender_right': 9}
 
-    metricsTable = "coef_updated.csv"
-    with open(metricsTable) as f:
+    metrics_table = "coef_updated.csv"
+    with open(metrics_table) as f:
         reader = csv.reader(f)
-        metricsList = [r for r in reader]
-    relevantMetricsNames = metricsList[0][1:]
-    floatMetricsList = [[float(perc) for perc in playerMetrics[1:]] for
-                        playerMetrics in metricsList[1:]]
+        metrics_list = [r for r in reader]
+    relevant_metrics_names = metrics_list[0][1:]
+    float_metrics_list = [[float(perc) for perc in player_metrics[1:]] for
+                          player_metrics in metrics_list[1:]]
 
     query_data = ",".join(
-        ['AVG({})'.format(el) for el in relevantMetricsNames])
+        ['AVG({})'.format(el) for el in relevant_metrics_names])
 
     with sqlite3.connect(FILENAME) as con:
         cur = con.cursor()
@@ -71,7 +71,7 @@ def performance_index(player_name, readiness):
                 player_name)).fetchall()
         #         print(p_pos)
         if len(p_pos) == 0 or p_pos[0][0] is None:
-            return 0
+            return 'un', 0
         #         print(p_pos)
         position = p_pos[0][0]
         p_pos = pos_dict[p_pos[0][0]]
@@ -88,7 +88,7 @@ def performance_index(player_name, readiness):
                                                         player_name)).fetchall()
         player_att = list(p_att[0][1:])
         performance = readiness * (
-                    np.array(floatMetricsList[p_pos]) @ np.array(
+                    np.array(float_metrics_list[p_pos]) @ np.array(
                          player_att))
         return position.split("_")[0], performance
 
@@ -133,7 +133,7 @@ def get_roster(team_list, tactic, readiness_list):
 def main():
     tactic = '4-4-2'
     team_score, lineup, players_name, team = \
-        get_roster(GERMANY, tactic, np.ones(23))
+        get_roster(ARGENTINA, tactic, np.ones(23))
     print("Team Score:\t{}".format(team_score))
     for pos, name in zip(lineup, players_name):
         print("{} \t{}".format(pos, name))
