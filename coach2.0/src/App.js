@@ -113,7 +113,7 @@ class App extends Component {
     })
   }
     render() {
-      const tactic =  <select onChange={this.getTactic.bind(this)} name='tactics'>
+      const tactic =  <select id='tacticSelect' onChange={this.getTactic.bind(this)} name='tactics'>
                         <option value='4-4-2'>4-4-2</option>
                         <option value='5-3-2'>5-3-2</option>
                         <option value='3-5-2'>3-5-2</option>

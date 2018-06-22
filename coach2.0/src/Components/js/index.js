@@ -16,9 +16,9 @@ class Box extends Component {
   render () {
     return (
       <div className={'box'} id={this.props.id}>
-          <h3 className='title'>{this.props.title}</h3>
-          {this.props.innerText}
-          <h3 className='title'>{this.props.team_score}</h3>
+        <h3 className='title'>{this.props.title}</h3>
+        {this.props.innerText}
+        <h3 className='title'>{this.props.team_score}</h3>
       </div>
     )
   }
@@ -59,12 +59,12 @@ class Main extends Component {
     return (
       <div id='wrapper'>
         <div className='left'>
-          <Box id='opponentDiv' title='GERMAN WC 2018' />
-          <Box id='formationDiv' title='FORMATION:' innerText={this.props.tactic} team_score={'TEAM SCORE: ' + this.props.team_score}/>
+          <Box id='opponentDiv' title='GERMANY WC 2018' />
+          <Box id='formationDiv' title='FORMATION:' innerText={this.props.tactic} team_score={'TEAM OVERALL: ' + this.props.team_score}/>
           <Box id='fieldDiv' innerText={sections}/>
         </div>
         <div className='right'>
-          <Box id='playersDiv' title='PLAYERS:' innerText={players} />
+          <Box id='playersDiv' title='AVAILABLE PLAYERS:' innerText={players} />
         </div>
       </div>
     )
